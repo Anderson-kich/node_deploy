@@ -1,8 +1,11 @@
 import { PrismaClient } from '@prisma/client';
+import cors from 'cors';
 import express from 'express';
 import { z } from 'zod';
 
 const app = express();
+app.use(cors());
+app.use(express.json());
 
 const prisma = new PrismaClient();
 
@@ -17,6 +20,8 @@ app.get('/users', async (request, response) => {
 });
 
 app.post('/users', async (request, response) => {
+  console.log('meus dados: ', request.body);
+
   const creteUserSchema = z.object({
     name: z.string(),
     email: z.string().email(),

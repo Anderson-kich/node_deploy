@@ -44,6 +44,7 @@
   "dependencies": {
     "@prisma/client": "^5.14.0",
     "@types/node": "*",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "zod": "^3.23.8"
   }
